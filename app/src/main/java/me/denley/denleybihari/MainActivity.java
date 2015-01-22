@@ -1,14 +1,80 @@
 package me.denley.denleybihari;
 
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.FrameLayout;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+import me.denley.fab.FloatingActionsMenu;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    @InjectView(R.id.toolbar) Toolbar toolbar;
+    @InjectView(R.id.main_content) FrameLayout mainContentView;
+    @InjectView(R.id.drawer_layout) DrawerLayout drawerLayout;
+    @InjectView(R.id.navigation_drawer) NavigationDrawerView navigationDrawer;
+    @InjectView(R.id.action_contact) FloatingActionsMenu contactButton;
+
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
+
+        // Set up navigation drawer
+        final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
+                this, drawerLayout, toolbar,
+                R.string.drawer_open, R.string.drawer_close){
+            @Override  public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                navigationDrawer.onDrawerClosed();
+            }
+            @Override public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                navigationDrawer.onDrawerOpened();
+            }
+            @Override public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                navigationDrawer.onDrawerSlide(slideOffset);
+                contactButton.hide();
+            }
+            @Override public void onDrawerStateChanged(int newState) {
+                super.onDrawerStateChanged(newState);
+                if(newState== DrawerLayout.STATE_IDLE && !drawerLayout.isDrawerOpen(Gravity.LEFT)){
+                    contactButton.show();
+                }
+            }
+        };
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+    }
+
+    @OnClick(R.id.action_contact_phone)
+    void contactPhone(){
+        contactButton.collapse();
+    }
+
+    @OnClick(R.id.action_contact_email)
+    void contactEmail(){
+        contactButton.collapse();
+    }
+
+    @OnClick(R.id.action_contact_chat)
+    void contactChat(){
+        contactButton.collapse();
+    }
+
+    @OnClick(R.id.action_contact_location)
+    void contactLocation(){
+        contactButton.collapse();
     }
 
 }

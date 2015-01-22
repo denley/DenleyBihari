@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.denley.fab.FloatingActionsMenu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/action_contact"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    app:fab_addButtonIconRes="@drawable/ic_person_white_24dp"
+    app:fab_addButtonPlusIconColor="@android:color/white"
+    app:fab_addButtonColorNormal="?attr/colorAccent"
+    app:fab_addButtonColorPressed="@color/colorAccentSecondary">
+
+    <me.denley.fab.FloatingActionButton
+        android:id="@+id/action_contact_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_icon="@drawable/ic_call_white_24dp"
+        app:fab_colorNormal="?attr/colorAccent"
+        app:fab_colorPressed="@color/colorAccentSecondary"
+        />
+
+    <me.denley.fab.FloatingActionButton
+        android:id="@+id/action_contact_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_icon="@drawable/ic_email_white_24dp"
+        app:fab_colorNormal="?attr/colorAccent"
+        app:fab_colorPressed="@color/colorAccentSecondary"
+        />
+
+    <me.denley.fab.FloatingActionButton
+        android:id="@+id/action_contact_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_icon="@drawable/ic_chat_white_24dp"
+        app:fab_colorNormal="?attr/colorAccent"
+        app:fab_colorPressed="@color/colorAccentSecondary"
+        />
+
+    <me.denley.fab.FloatingActionButton
+        android:id="@+id/action_contact_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fab_icon="@drawable/ic_location_on_white_24dp"
+        app:fab_colorNormal="?attr/colorAccent"
+        app:fab_colorPressed="@color/colorAccentSecondary"
+        />
+
+</me.denley.fab.FloatingActionsMenu>
