@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -22,11 +21,11 @@ import me.denley.fab.FloatingActionsMenu;
  *
  * @author Denley Bihari
  */
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerView.PageLoader{
 
     @InjectView(R.id.systemBarBackground) View systemBarBackground;
     @InjectView(R.id.toolbar) Toolbar toolbar;
-    @InjectView(R.id.main_content) FrameLayout mainContentView;
+    @InjectView(R.id.main_content) ViewGroup mainContentView;
     @InjectView(R.id.drawer_layout) DrawerLayout drawerLayout;
     @InjectView(R.id.navigation_drawer) NavigationDrawerView navigationDrawer;
     @InjectView(R.id.action_contact) FloatingActionsMenu contactButton;
@@ -42,17 +41,8 @@ public class MainActivity extends ActionBarActivity {
         final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar,
                 R.string.drawer_open, R.string.drawer_close){
-            @Override  public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                navigationDrawer.onDrawerClosed();
-            }
-            @Override public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                navigationDrawer.onDrawerOpened();
-            }
             @Override public void onDrawerSlide(View drawerView, float slideOffset) {
                 super.onDrawerSlide(drawerView, slideOffset);
-                navigationDrawer.onDrawerSlide(slideOffset);
                 contactButton.hide();
             }
             @Override public void onDrawerStateChanged(int newState) {
@@ -63,7 +53,14 @@ public class MainActivity extends ActionBarActivity {
             }
         };
         drawerLayout.setDrawerListener(drawerToggle);
+        navigationDrawer.setPageLoader(this);
         drawerToggle.syncState();
+    }
+
+    @Override public void loadPage(View page) {
+        mainContentView.removeAllViews();
+        mainContentView.addView(page);
+        drawerLayout.closeDrawer(Gravity.START);
     }
 
     @OnClick(R.id.action_contact_phone)

@@ -2,8 +2,11 @@ package me.denley.denleybihari;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
+import android.util.StateSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -25,12 +28,7 @@ public class DrawerListItem extends LinearLayout {
     public DrawerListItem(Context context, AttributeSet attrs) {
         super(context, attrs);
         setClickable(true);
-
-        // Setup background
-        final TypedArray backgroundArray = context.obtainStyledAttributes(
-                new int[]{R.attr.selectableItemBackground});
-        setBackgroundDrawable(backgroundArray.getDrawable(0));
-        backgroundArray.recycle();
+        setupBackground(context);
 
         // Setup child views
         LayoutInflater.from(context).inflate(R.layout.list_item_drawer, this);
@@ -53,6 +51,22 @@ public class DrawerListItem extends LinearLayout {
             }
         }
 
+    }
+
+    private void setupBackground(final Context context){
+        final TypedArray backgroundArray = context.obtainStyledAttributes(
+                new int[]{R.attr.selectableItemBackground});
+        final Drawable normalPressedBackground = backgroundArray.getDrawable(0);
+        backgroundArray.recycle();
+
+        final Drawable selectedBackground = new ColorDrawable(
+                context.getResources().getColor(R.color.selected_item_background));
+
+        final StateListDrawable background = new StateListDrawable();
+        background.addState(new int[]{android.R.attr.state_selected}, selectedBackground);
+        background.addState(StateSet.WILD_CARD, normalPressedBackground);
+
+        setBackgroundDrawable(background);
     }
 
 }

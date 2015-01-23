@@ -5,6 +5,8 @@
     <color name="colorAccent">#ff6e40</color>
     <color name="colorAccentSecondary">#FF9E80</color>
 
+    <color name="selected_item_background">#E0E0E0</color>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <item name="colorPrimary">@color/colorPrimary</item>

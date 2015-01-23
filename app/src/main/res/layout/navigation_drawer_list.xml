@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,7 +11,7 @@
         android:id="@+id/action_about"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_face_grey600_24dp"
+        app:dli_icon="@drawable/ic_about"
         app:dli_text="@string/action_about"
         />
 
@@ -18,7 +19,7 @@
         android:id="@+id/action_why"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_directions_grey600_24dp"
+        app:dli_icon="@drawable/ic_why"
         app:dli_text="@string/action_why"
         />
 
@@ -26,7 +27,7 @@
         android:id="@+id/action_portfolio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_folder_shared_grey600_24dp"
+        app:dli_icon="@drawable/ic_portfolio"
         app:dli_text="@string/action_portfolio"
         />
 
@@ -34,7 +35,7 @@
         android:id="@+id/action_testimonials"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_announcement_grey600_24dp"
+        app:dli_icon="@drawable/ic_testimonials"
         app:dli_text="@string/action_testimonials"
         />
 
@@ -42,7 +43,7 @@
         android:id="@+id/action_experience"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_school_grey600_24dp"
+        app:dli_icon="@drawable/ic_experience"
         app:dli_text="@string/action_experience"
         />
 
