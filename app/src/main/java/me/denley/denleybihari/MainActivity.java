@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import butterknife.ButterKnife;
@@ -14,9 +15,16 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import me.denley.fab.FloatingActionsMenu;
 
-
+/**
+ * The primary Activity for this app.
+ *
+ * This class handles the navigation drawer setup, and the floating action menu behaviour.
+ *
+ * @author Denley Bihari
+ */
 public class MainActivity extends ActionBarActivity {
 
+    @InjectView(R.id.systemBarBackground) View systemBarBackground;
     @InjectView(R.id.toolbar) Toolbar toolbar;
     @InjectView(R.id.main_content) FrameLayout mainContentView;
     @InjectView(R.id.drawer_layout) DrawerLayout drawerLayout;
@@ -28,6 +36,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        setSystemBarHeight();
 
         // Set up navigation drawer
         final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
@@ -48,7 +57,7 @@ public class MainActivity extends ActionBarActivity {
             }
             @Override public void onDrawerStateChanged(int newState) {
                 super.onDrawerStateChanged(newState);
-                if(newState== DrawerLayout.STATE_IDLE && !drawerLayout.isDrawerOpen(Gravity.LEFT)){
+                if(newState== DrawerLayout.STATE_IDLE && !drawerLayout.isDrawerOpen(Gravity.START)){
                     contactButton.show();
                 }
             }
@@ -60,21 +69,38 @@ public class MainActivity extends ActionBarActivity {
     @OnClick(R.id.action_contact_phone)
     void contactPhone(){
         contactButton.collapse();
+
     }
 
     @OnClick(R.id.action_contact_email)
     void contactEmail(){
         contactButton.collapse();
+
     }
 
     @OnClick(R.id.action_contact_chat)
     void contactChat(){
         contactButton.collapse();
+
     }
 
     @OnClick(R.id.action_contact_location)
     void contactLocation(){
         contactButton.collapse();
+
+    }
+
+    /** Measures the status bar height, and sets the height of the overlay view accordingly */
+    private void setSystemBarHeight() {
+        int height = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            height = getResources().getDimensionPixelSize(resourceId);
+        }
+
+        final ViewGroup.LayoutParams params = systemBarBackground.getLayoutParams();
+        params.height = height;
+        systemBarBackground.setLayoutParams(params);
     }
 
 }
