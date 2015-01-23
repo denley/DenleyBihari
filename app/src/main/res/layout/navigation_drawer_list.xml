@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <me.denley.denleybihari.DrawerListItem
+        android:id="@+id/action_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dli_icon="@drawable/ic_face_grey600_24dp"
+        app:dli_text="@string/action_about"
+        />
+
+    <me.denley.denleybihari.DrawerListItem
+        android:id="@+id/action_why"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dli_icon="@drawable/ic_basecamp_grey600"
+        app:dli_text="@string/action_why"
+        />
+
+    <me.denley.denleybihari.DrawerListItem
+        android:id="@+id/action_portfolio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dli_icon="@drawable/ic_folder_shared_grey600_24dp"
+        app:dli_text="@string/action_portfolio"
+        />
+
+    <me.denley.denleybihari.DrawerListItem
+        android:id="@+id/action_testimonials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dli_icon="@drawable/ic_announcement_grey600_24dp"
+        app:dli_text="@string/action_testimonials"
+        />
+
+    <me.denley.denleybihari.DrawerListItem
+        android:id="@+id/action_experience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dli_icon="@drawable/ic_school_grey600_24dp"
+        app:dli_text="@string/action_experience"
+        />
+
+</LinearLayout>

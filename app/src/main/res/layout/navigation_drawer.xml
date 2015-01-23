@@ -2,7 +2,6 @@
 <me.denley.denleybihari.ScrimInsetsFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrimInsetsFrameLayout"
     android:layout_width="320dp"
     android:layout_height="match_parent"
@@ -11,11 +10,13 @@
     android:elevation="10dp"
     android:fitsSystemWindows="true"
     app:insetForeground="#4000">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
         >
+
         <me.denley.denleybihari.NavigationDrawerView
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -23,58 +24,11 @@
             android:id="@+id/navigation_drawer"
             >
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="centerInside"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/drawer_splash"
-                    />
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="16dp"
-                    android:gravity="start"
-                    >
-                    <ImageView
-                        android:id="@+id/profile_image"
-                        android:layout_width="96dp"
-                        android:layout_height="96dp"
-                        tools:src="@drawable/profile_image"
-                        />
-
-                    <TextView
-                        android:id="@+id/name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:text="@string/app_name"
-                        />
-
-                    <TextView
-                        android:id="@+id/email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@android:color/white"
-                        android:text="@string/email"
-                        />
-                </LinearLayout>
-
-            </RelativeLayout>
-
+            <include layout="@layout/navigation_drawer_splash" />
+            <include layout="@layout/navigation_drawer_list" />
 
         </me.denley.denleybihari.NavigationDrawerView>
+
     </ScrollView>
+
 </me.denley.denleybihari.ScrimInsetsFrameLayout>

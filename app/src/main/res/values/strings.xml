@@ -8,4 +8,10 @@
 
     <string name="email">denleybihari@gmail.com</string>
 
+    <string name="action_about">About Me</string>
+    <string name="action_why">Why Basecamp?</string>
+    <string name="action_portfolio">Portfolio</string>
+    <string name="action_testimonials">Testimonials</string>
+    <string name="action_experience">Experience/Education</string>
+
 </resources>
