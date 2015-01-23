@@ -18,7 +18,7 @@
         android:id="@+id/action_why"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:dli_icon="@drawable/ic_basecamp_grey600"
+        app:dli_icon="@drawable/ic_directions_grey600_24dp"
         app:dli_text="@string/action_why"
         />
 
