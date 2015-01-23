@@ -57,9 +57,10 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         drawerToggle.syncState();
     }
 
-    @Override public void loadPage(View page) {
+    @Override public void loadPage(View page, int title) {
         mainContentView.removeAllViews();
         mainContentView.addView(page);
+        toolbar.setTitle(title);
         drawerLayout.closeDrawer(Gravity.START);
     }
 

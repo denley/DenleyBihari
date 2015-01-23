@@ -39,7 +39,7 @@
                 android:paddingRight="4dp"
                 android:background="?attr/colorPrimary"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:title="@string/app_name"
+                app:title="@string/action_about"
                 />
 
 

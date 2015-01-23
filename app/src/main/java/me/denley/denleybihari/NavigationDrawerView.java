@@ -30,7 +30,7 @@ public class NavigationDrawerView extends LinearLayout {
     };
 
     public interface PageLoader {
-        public void loadPage(View page);
+        public void loadPage(View page, int title);
     }
 
 
@@ -90,19 +90,19 @@ public class NavigationDrawerView extends LinearLayout {
         if(pageLoader!=null){
             switch(view.getId()){
                 case R.id.action_about:
-                    pageLoader.loadPage(new View(getContext()));
+                    pageLoader.loadPage(new View(getContext()), R.string.action_about);
                     break;
                 case R.id.action_why:
-                    pageLoader.loadPage(new View(getContext()));
+                    pageLoader.loadPage(new View(getContext()), R.string.action_why);
                     break;
                 case R.id.action_portfolio:
-                    pageLoader.loadPage(new View(getContext()));
+                    pageLoader.loadPage(new View(getContext()), R.string.action_portfolio);
                     break;
                 case R.id.action_testimonials:
-                    pageLoader.loadPage(new View(getContext()));
+                    pageLoader.loadPage(new View(getContext()), R.string.action_testimonials);
                     break;
                 case R.id.action_experience:
-                    pageLoader.loadPage(new View(getContext()));
+                    pageLoader.loadPage(new View(getContext()), R.string.action_experience);
                     break;
             }
         }
