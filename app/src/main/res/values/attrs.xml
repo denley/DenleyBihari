@@ -6,4 +6,9 @@
         <attr name="dli_text" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="TestimonialCardView">
+        <attr name="tcv_quote" format="string"/>
+        <attr name="tcv_author" format="string"/>
+    </declare-styleable>
+
 </resources>

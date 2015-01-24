@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <me.denley.denleybihari.TestimonialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tcv_quote="@string/quote1"
+        app:tcv_author="@string/author1"
+        />
+
+    <me.denley.denleybihari.TestimonialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tcv_quote="@string/quote2"
+        app:tcv_author="@string/author2"
+        />
+
+    <me.denley.denleybihari.TestimonialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tcv_quote="@string/quote3"
+        app:tcv_author="@string/author3"
+        />
+
+    <me.denley.denleybihari.TestimonialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tcv_quote="@string/quote4"
+        app:tcv_author="@string/author4"
+        />
+
+    <me.denley.denleybihari.TestimonialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tcv_quote="@string/quote5"
+        app:tcv_author="@string/author5"
+        />
+
+</LinearLayout>

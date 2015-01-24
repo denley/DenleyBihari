@@ -139,7 +139,7 @@ public class NavigationDrawerView extends LinearLayout {
                     case R.id.action_testimonials:
                         currentPage = 3;
                         pageLoader.loadPage(
-                                new View(getContext()),
+                                new TestimonialsView(getContext()),
                                 R.string.action_testimonials
                         );
                         break;

@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -25,7 +26,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
 
     @InjectView(R.id.systemBarBackground) View systemBarBackground;
     @InjectView(R.id.toolbar) Toolbar toolbar;
-    @InjectView(R.id.main_content) ViewGroup mainContentView;
+    @InjectView(R.id.main_content) ScrollView mainContentView;
     @InjectView(R.id.drawer_layout) DrawerLayout drawerLayout;
     @InjectView(R.id.navigation_drawer) NavigationDrawerView navigationDrawer;
     @InjectView(R.id.action_contact) FloatingActionsMenu contactButton;

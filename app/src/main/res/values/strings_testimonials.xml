@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="author1">Graham Dawson</string>
+    <string name="quote1">
+        Denley is what I would call a Ninja developer.
+        He\'s at the top of the game - at least 3 times more
+        efficient than someone who charges 1/2 the hourly rate.
+        I couldn\'t be more pleased with his work,
+        and it\'s been nothing but a pleasure to work with him.
+    </string>
+
+    <string name="author2">Alex Daniel</string>
+    <string name="quote2">
+        Fantastic developer. Continual communication,
+        educated opinion and happy to work towards 100% satisfaction.
+        I recommend Denley for any Android app job where quality and updatability is required.
+        Code is clean, well thought-out and well commented. Adheres to good programming practices
+        and was happy to fix any bugs and interface issues as they arose without complaint.
+        Very happy with this project, developer and final deliverable
+    </string>
+
+    <string name="author3">Eric C</string>
+    <string name="quote3">
+        Denley is a true professional, with solid Android knowledge and a great attention to detail.
+        Count on him to produce a high quality, well thought out app.
+        He did a fantastic job on my project, meeting all the requirements (even more!)
+        and replied quickly to my requests/feedbacks. The highest recommendation for promptness,
+        responsiveness, communication, expertise and quality of work.
+        A top choice for any Android app development, worth every penny.
+        I\'m very impressed, I can\'t say enough positive things. Just awesome, will hire again.
+    </string>
+
+    <string name="author4">Sam Hu</string>
+    <string name="quote4">
+        Denley has been excellent in working on this android app.
+        Great ideas to turn the requirements into reality, great work ethic, great support.
+        Communication and response times very good. Highly recommended.
+    </string>
+
+    <string name="author5">Sergey Berezin</string>
+    <string name="quote5">
+        Denley is really the sort of developer you are seldom to meet:
+        \n1) he understands what is important and what isn\'t
+        \n2) he likes what he does and takes the responsibility for it
+    </string>
+
+</resources>

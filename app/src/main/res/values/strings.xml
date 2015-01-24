@@ -14,43 +14,4 @@
     <string name="action_testimonials">Testimonials</string>
     <string name="action_experience">Experience/Education</string>
 
-    <string name="title_me">Me</string>
-    <string name="content_me">
-        I\'m Denley (a guy with a weird name). Born and raised in Adelaide, Australia.
-        I\'d like to talk about our future.
-    </string>
-
-    <string name="title_heart">At Heart</string>
-    <string name="content_heart">
-        I\'m into gadgets (I\'m <![CDATA[<b><i>really</i></b>]]> into gadgets).
-        I enjoy looking at
-        <![CDATA[<a href="https://www.kickstarter.com/discover/advanced?category_id=16&sort=newest">
-        new technology projects</a>]]>
-        on Kickstarter™, and reading about the
-        <![CDATA[<a href="http://en.wikipedia.org/wiki/Consumer_Electronics_Show">CES</a>]]>
-        every year.
-        I like reading anything scientific or technical.
-        In my spare time I like watching sci-fi, and working on my own Android™ app ideas.
-        I play pool (billiards) in a team with friends.
-    </string>
-
-    <string name="title_trade">By Trade</string>
-    <string name="content_trade">
-        I\'m a professional Android guru (freelance Android developer).
-        I work with a range of clients to build their app ideas from scratch,
-        to update existing apps (fixing bugs and updating designs), and to port existing
-        iOS apps to Android (and trying hard to convince them to adapt their design).
-        \n\nI really enjoy what I do.
-        I like the cutting-edge and open nature of the Android community.
-        I like the variety of projects that keep me challenged and engaged.
-        I like the freedom to work remotely and manage my own time.
-        But most of all, I like that every single day I am pushed to learn new skills,
-        improve existing ones, and keep up to date with the latest in the Android platform.
-    </string>
-
-    <string name="title_aspiration">To The Future</string>
-    <string name="content_aspiration">
-
-    </string>
-
 </resources>
