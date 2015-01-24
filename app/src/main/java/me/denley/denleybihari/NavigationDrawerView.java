@@ -1,6 +1,8 @@
 package me.denley.denleybihari;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -39,7 +41,6 @@ public class NavigationDrawerView extends LinearLayout {
     PageLoader pageLoader = null;
 
     @InjectView(R.id.profile_image) ImageView profileImage;
-    @InjectView(R.id.action_about) DrawerListItem aboutButton;
 
     @InjectViews({
             R.id.action_about,
@@ -49,6 +50,9 @@ public class NavigationDrawerView extends LinearLayout {
             R.id.action_experience
     })
     List<DrawerListItem> navigationButtons;
+
+    /** The index of the currently selected page */
+    private int currentPage = 0;
 
     public NavigationDrawerView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -65,9 +69,29 @@ public class NavigationDrawerView extends LinearLayout {
                     .transform(new CircleTransformation())
                     .into(profileImage);
         }
+    }
+
+    @Override public Parcelable onSaveInstanceState() {
+        final Bundle bundle = new Bundle();
+        bundle.putParcelable("instanceState", super.onSaveInstanceState());
+        bundle.putInt("currentPage", currentPage);
+        return bundle;
+    }
+
+    @Override public void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            currentPage = bundle.getInt("currentPage");
+            state = bundle.getParcelable("instanceState");
+        }
+        super.onRestoreInstanceState(state);
+    }
+
+    @Override protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
 
         // Select "About" by default
-        onNavItemClick(aboutButton);
+        onNavItemClick(navigationButtons.get(currentPage));
     }
 
     /** Sets the page loader to handle navigation selection callbacks */
@@ -92,22 +116,58 @@ public class NavigationDrawerView extends LinearLayout {
             if (pageLoader != null) {
                 switch (view.getId()) {
                     case R.id.action_about:
-                        pageLoader.loadPage(new View(getContext()), R.string.action_about);
+                        currentPage = 0;
+                        pageLoader.loadPage(
+                                new AboutView(getContext()),
+                                R.string.app_name
+                        );
                         break;
                     case R.id.action_why:
-                        pageLoader.loadPage(new View(getContext()), R.string.action_why);
+                        currentPage = 1;
+                        pageLoader.loadPage(
+                                new View(getContext()),
+                                R.string.action_why
+                        );
                         break;
                     case R.id.action_portfolio:
-                        pageLoader.loadPage(new View(getContext()), R.string.action_portfolio);
+                        currentPage = 2;
+                        pageLoader.loadPage(
+                                new View(getContext()),
+                                R.string.action_portfolio
+                        );
                         break;
                     case R.id.action_testimonials:
-                        pageLoader.loadPage(new View(getContext()), R.string.action_testimonials);
+                        currentPage = 3;
+                        pageLoader.loadPage(
+                                new View(getContext()),
+                                R.string.action_testimonials
+                        );
                         break;
                     case R.id.action_experience:
-                        pageLoader.loadPage(new View(getContext()), R.string.action_experience);
+                        currentPage = 4;
+                        pageLoader.loadPage(
+                                new View(getContext()),
+                                R.string.action_experience
+                        );
                         break;
                 }
             }
+        }
+    }
+
+    /**
+     * Attempts to navigate backwards through the page history.
+     *
+     * @return  true, if the navigation was successful.
+     *          false, if the root element is already showing.
+     */
+    public boolean navigateBack(){
+        final DrawerListItem rootItem = navigationButtons.get(0);
+        if(rootItem.isSelected()){
+            return false;
+        }else{
+            onNavItemClick(rootItem);
+            return true;
         }
     }
 

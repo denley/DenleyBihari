@@ -88,6 +88,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
 
     }
 
+    @Override public void onBackPressed() {
+        if(!navigationDrawer.navigateBack()){
+            super.onBackPressed();
+        }
+    }
+
     /** Measures the status bar height, and sets the height of the overlay view accordingly */
     private void setSystemBarHeight() {
         int height = 0;
