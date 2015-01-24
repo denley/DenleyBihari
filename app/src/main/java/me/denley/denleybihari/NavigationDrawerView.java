@@ -83,27 +83,30 @@ public class NavigationDrawerView extends LinearLayout {
             R.id.action_experience
     })
     void onNavItemClick(DrawerListItem view){
-        ButterKnife.apply(navigationButtons, ACTION_DESELECT);
-        view.setSelected(true);
+        if(!view.isSelected()) {
+            // Apply selected state to view
+            ButterKnife.apply(navigationButtons, ACTION_DESELECT);
+            view.setSelected(true);
 
-        // Load page
-        if(pageLoader!=null){
-            switch(view.getId()){
-                case R.id.action_about:
-                    pageLoader.loadPage(new View(getContext()), R.string.action_about);
-                    break;
-                case R.id.action_why:
-                    pageLoader.loadPage(new View(getContext()), R.string.action_why);
-                    break;
-                case R.id.action_portfolio:
-                    pageLoader.loadPage(new View(getContext()), R.string.action_portfolio);
-                    break;
-                case R.id.action_testimonials:
-                    pageLoader.loadPage(new View(getContext()), R.string.action_testimonials);
-                    break;
-                case R.id.action_experience:
-                    pageLoader.loadPage(new View(getContext()), R.string.action_experience);
-                    break;
+            // Load page
+            if (pageLoader != null) {
+                switch (view.getId()) {
+                    case R.id.action_about:
+                        pageLoader.loadPage(new View(getContext()), R.string.action_about);
+                        break;
+                    case R.id.action_why:
+                        pageLoader.loadPage(new View(getContext()), R.string.action_why);
+                        break;
+                    case R.id.action_portfolio:
+                        pageLoader.loadPage(new View(getContext()), R.string.action_portfolio);
+                        break;
+                    case R.id.action_testimonials:
+                        pageLoader.loadPage(new View(getContext()), R.string.action_testimonials);
+                        break;
+                    case R.id.action_experience:
+                        pageLoader.loadPage(new View(getContext()), R.string.action_experience);
+                        break;
+                }
             }
         }
     }
