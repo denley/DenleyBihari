@@ -23,6 +23,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.AbsListView;
+import android.widget.ScrollView;
 
 import me.denley.denleybihari.R;
 
@@ -560,6 +561,82 @@ public class FloatingActionsMenu extends ViewGroup {
         mRecyclerView.setOnScrollListener(onScrollListener);
     }
 
+    public void attachToScrollView(@NonNull ScrollView scrollView){
+        attachToScrollView(scrollView, new FabScrollViewScrollListener());
+    }
+
+    public void attachToScrollView(@NonNull ScrollView scrollView, FabScrollViewScrollListener onScrollListener) {
+//        mScrollView = scrollView;
+//        mScrollViewOnScrollListener = onScrollListener;
+        onScrollListener.setFloatingActionButton(this);
+        onScrollListener.setScrollView(scrollView);
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(onScrollListener);
+    }
+
+    /**
+     * Shows/hides the FAB when the attached {@link AbsListView} scrolling events occur.
+     * Extend this class and override {@link FabOnScrollListener#onScrollDown()}/{@link FabOnScrollListener#onScrollUp()}
+     * if you need custom code to be executed on these events.
+     */
+    public static class FabScrollViewScrollListener extends ScrollDirectionDetector implements ScrollDirectionListener {
+        private FloatingActionsMenu mFloatingActionButton;
+        private ScrollView mScrollView;
+
+        public FabScrollViewScrollListener() {
+            setScrollDirectionListener(this);
+        }
+
+        private void setFloatingActionButton(@NonNull FloatingActionsMenu floatingActionButton) {
+            mFloatingActionButton = floatingActionButton;
+        }
+
+        /**
+         * Called when the attached {@link AbsListView} is scrolled down.
+         * <br />
+         * <br />
+         * <i>Derived classes should call the super class's implementation of this method.
+         * If they do not, the FAB will not react to AbsListView's scrolling events.</i>
+         */
+        @Override
+        public void onScrollDown() {
+            mFloatingActionButton.show();
+        }
+
+        /**
+         * Called when the attached {@link AbsListView} is scrolled up.
+         * <br />
+         * <br />
+         * <i>Derived classes should call the super class's implementation of this method.
+         * If they do not, the FAB will not react to AbsListView's scrolling events.</i>
+         */
+        @Override
+        public void onScrollUp() {
+            mFloatingActionButton.hide();
+        }
+
+        /**
+         * Will be incorrect if rows has changed and if list has rows of different heights
+         * <p/>
+         * So when measuring scroll direction, it's necessary to ignore this value
+         * if first visible row is different than previously calculated.
+         *
+         * @deprecated because it should be used with caution
+         */
+        protected int estimateScrollY() {
+            if (mScrollView == null) return 0;
+            final View child = mScrollView.getChildAt(0);
+            if(child == null) return 0;
+            final int scrollY = mScrollView.getScrollY();
+            return Math.min(
+                    Math.max(0, scrollY),
+                    Math.max(0, child.getHeight()-mScrollView.getHeight()));
+        }
+
+        public void setScrollView(ScrollView scrollView) {
+            mScrollView = scrollView;
+        }
+    }
+
     /**
      * Shows/hides the FAB when the attached {@link AbsListView} scrolling events occur.
      * Extend this class and override {@link FabOnScrollListener#onScrollDown()}/{@link FabOnScrollListener#onScrollUp()}
@@ -641,6 +718,8 @@ public class FloatingActionsMenu extends ViewGroup {
             mFloatingActionButton.hide();
         }
     }
+
+
 
     public static interface ScrollDirectionListener {
         void onScrollDown();
@@ -772,13 +851,25 @@ public class FloatingActionsMenu extends ViewGroup {
      *
      * @author Vilius Kraujutis
      */
-    public static abstract class ScrollDirectionDetector implements AbsListView.OnScrollListener {
+    public static abstract class ScrollDirectionDetector implements AbsListView.OnScrollListener, ViewTreeObserver.OnScrollChangedListener {
         private ScrollDirectionListener mScrollDirectionListener;
         private int mPreviousScrollY;
         private int mPreviousFirstVisibleItem;
         public int mLastChangeY;
         private AbsListView mListView;
         private int mMinSignificantScroll;
+
+        @Override
+        public void onScrollChanged() {
+            int newScrollY = estimateScrollY();
+            if (mScrollDirectionListener != null && isSignificantDelta(newScrollY)) {
+                if (isScrollUp(newScrollY)) {
+                    mScrollDirectionListener.onScrollUp();
+                } else {
+                    mScrollDirectionListener.onScrollDown();
+                }
+            }
+        }
 
         @Override
         public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -822,6 +913,8 @@ public class FloatingActionsMenu extends ViewGroup {
          * @see #isScrollUp(int)
          */
         private boolean isSignificantDelta(int newScrollY) {
+            if(mPreviousScrollY == newScrollY)
+                return false;
             boolean isSignificantDelta = Math.abs(mLastChangeY - newScrollY) > mMinSignificantScroll;
             if (isSignificantDelta)
                 mLastChangeY = newScrollY;
@@ -854,7 +947,7 @@ public class FloatingActionsMenu extends ViewGroup {
          *
          * @deprecated because it should be used with caution
          */
-        private int estimateScrollY() {
+        protected int estimateScrollY() {
             if (mListView == null || mListView.getChildAt(0) == null) return 0;
             View topChild = mListView.getChildAt(0);
             return mListView.getFirstVisiblePosition() * topChild.getHeight() - topChild.getTop();

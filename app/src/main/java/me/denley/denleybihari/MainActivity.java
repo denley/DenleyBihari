@@ -56,6 +56,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         drawerLayout.setDrawerListener(drawerToggle);
         navigationDrawer.setPageLoader(this);
         drawerToggle.syncState();
+
+
+        contactButton.attachToScrollView(mainContentView);
     }
 
     @Override public void loadPage(View page, int title) {
