@@ -14,4 +14,8 @@
     <string name="action_testimonials">Testimonials</string>
     <string name="action_experience">Experience/Education</string>
 
+    <string name="action_download">Download</string>
+    <string name="error_cant_open">Unable to open link. Please install a web browser.</string>
+
+
 </resources>

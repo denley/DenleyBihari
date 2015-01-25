@@ -132,7 +132,7 @@ public class NavigationDrawerView extends LinearLayout {
                     case R.id.action_portfolio:
                         currentPage = 2;
                         pageLoader.loadPage(
-                                new View(getContext()),
+                                new PortfolioView(getContext()),
                                 R.string.action_portfolio
                         );
                         break;

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name1"
+        app:pcv_client="@string/client1"
+        app:pcv_url="@string/url1"
+        app:pcv_splash_image="@drawable/splash_fusioncalc"
+        app:pcv_icon="@drawable/ic_launcher_fusioncalc"
+        />
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name2"
+        app:pcv_client="@string/client2"
+        app:pcv_url="@string/url2"
+        app:pcv_splash_image="@drawable/splash_wifi_manager"
+        app:pcv_icon="@drawable/ic_launcher_wifi_manager"
+        />
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name3"
+        app:pcv_client="@string/client3"
+        app:pcv_url="@string/url3"
+        app:pcv_splash_image="@drawable/splash_sunseeker"
+        app:pcv_icon="@drawable/ic_launcher_ss"
+        />
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name4"
+        app:pcv_client="@string/client4"
+        app:pcv_url="@string/url4"
+        app:pcv_splash_image="@drawable/splash_9patch"
+        app:pcv_icon="@drawable/ic_launcher_9_patch"
+        />
+
+</LinearLayout>
