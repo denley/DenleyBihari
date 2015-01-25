@@ -4,7 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     >
 
     <me.denley.denleybihari.PortfolioCardView
@@ -15,6 +14,7 @@
         app:pcv_url="@string/url1"
         app:pcv_splash_image="@drawable/splash_fusioncalc"
         app:pcv_icon="@drawable/ic_launcher_fusioncalc"
+        app:pcv_year="@string/year1"
         />
 
     <me.denley.denleybihari.PortfolioCardView
@@ -25,6 +25,7 @@
         app:pcv_url="@string/url2"
         app:pcv_splash_image="@drawable/splash_wifi_manager"
         app:pcv_icon="@drawable/ic_launcher_wifi_manager"
+        app:pcv_year="@string/year2"
         />
 
     <me.denley.denleybihari.PortfolioCardView
@@ -35,6 +36,7 @@
         app:pcv_url="@string/url3"
         app:pcv_splash_image="@drawable/splash_sunseeker"
         app:pcv_icon="@drawable/ic_launcher_ss"
+        app:pcv_year="@string/year3"
         />
 
     <me.denley.denleybihari.PortfolioCardView
@@ -45,6 +47,7 @@
         app:pcv_url="@string/url4"
         app:pcv_splash_image="@drawable/splash_9patch"
         app:pcv_icon="@drawable/ic_launcher_9_patch"
+        app:pcv_year="@string/year4"
         />
 
 </LinearLayout>

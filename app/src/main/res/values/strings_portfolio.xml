@@ -2,34 +2,26 @@
 <resources>
 
     <string name="name1">FusionCalc</string>
-    <string name="client1">
-        iOS Adaptation
-        \n4.1 Avg. Rating
-        \n(Commissioned)
-    </string>
+    <string name="client1">iOS Adaptation</string>
+    <string name="year1">Commissioned in 2014</string>
     <string name="url1">https://play.google.com/store/apps/details?id=com.fusioncalc</string>
 
-    <string name="name2">Wifi Manager\nfor Android Wear</string>
-    <string name="client2">
-        Android Wear App
-        \n4.5 Avg. Rating
-        \n(Self-Published)
-    </string>
+    <string name="name2">Wi-Fi Manager\nfor Android Wear</string>
+    <string name="client2">Android Wear App</string>
+    <string name="year2">Self-Published in 2014</string>
     <string name="url2">https://play.google.com/store/apps/details?id=me.denley.wearwifimanager</string>
 
     <string name="name3">Sun Seeker</string>
     <string name="client3">
-        Updates and Fixes
-        \nto Existing App
-        \n(Commissioned)
+        Updates to
+        \nExisting App
     </string>
+    <string name="year3">Commissioned in 2014</string>
     <string name="url3">https://play.google.com/store/apps/details?id=com.ajnaware.sunseeker</string>
 
     <string name="name4">9 Patch Editor</string>
-    <string name="client4">
-        \n4.3 Avg. Rating
-        \n(Self-Published)
-    </string>
+    <string name="client4"></string>
+    <string name="year4">Self-Published in 2012</string>
     <string name="url4">https://play.google.com/store/apps/details?id=me.denley.android.ninepatch</string>
 
 </resources>

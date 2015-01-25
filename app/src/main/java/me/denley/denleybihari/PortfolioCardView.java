@@ -29,6 +29,7 @@ public class PortfolioCardView extends FrameLayout {
     @InjectView(R.id.name) TextView nameTextView;
     @InjectView(R.id.client) TextView clientTextView;
     @InjectView(R.id.icon) ImageView iconImageView;
+    @InjectView(R.id.year) TextView yearTextView;
 
     String url;
 
@@ -46,6 +47,7 @@ public class PortfolioCardView extends FrameLayout {
             url = a.getString(R.styleable.PortfolioCardView_pcv_url);
             String name = a.getString(R.styleable.PortfolioCardView_pcv_name);
             String client = a.getString(R.styleable.PortfolioCardView_pcv_client);
+            String year = a.getString(R.styleable.PortfolioCardView_pcv_year);
             int splashImage = a.getResourceId(R.styleable.PortfolioCardView_pcv_splash_image, 0);
             int icon = a.getResourceId(R.styleable.PortfolioCardView_pcv_icon, 0);
 
@@ -64,6 +66,9 @@ public class PortfolioCardView extends FrameLayout {
                 Picasso.with(context)
                         .load(icon)
                         .into(iconImageView);
+            }
+            if(year!=null){
+                yearTextView.setText(year);
             }
         }
     }

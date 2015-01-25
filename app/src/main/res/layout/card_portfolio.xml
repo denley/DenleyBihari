@@ -4,12 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="0dp"
     >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="152dp"
         >
 
         <ImageView
@@ -21,19 +20,40 @@
             tools:src="@drawable/splash_fusioncalc"
             />
 
+        <View
+            android:id="@+id/download"
+            android:background="?attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:scaleType="fitCenter"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            tools:src="@drawable/ic_launcher_fusioncalc"
+            />
+
         <TextView
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/icon"
+            android:layout_toLeftOf="@id/icon"
             android:layout_margin="16dp"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:shadowColor="@android:color/black"
             android:shadowRadius="5"
-            tools:text="My App Name"
+            tools:text="@string/name1"
             />
-        
+
         <TextView
             android:id="@+id/client"
             android:layout_width="wrap_content"
@@ -44,34 +64,24 @@
             android:textColor="@android:color/white"
             android:shadowColor="@android:color/black"
             android:shadowRadius="5"
-            android:textSize="16sp"
-            tools:text="Made for: Joe Schmoe"
+            android:textSize="14sp"
+            tools:text="@string/client1"
             />
 
-        <Button
-            android:id="@+id/download"
-            android:layout_width="104dp"
+        <TextView
+            android:id="@+id/year"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:layout_margin="16dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:elevation="10dp"
-            android:text="@string/action_download"
             android:textColor="@android:color/white"
-            android:background="@drawable/button"
-            />
-
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:scaleType="fitCenter"
-            android:layout_margin="20dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            tools:src="@drawable/ic_launcher"
+            android:shadowColor="@android:color/black"
+            android:shadowRadius="5"
+            android:textSize="14sp"
+            tools:text="@string/year1"
             />
 
     </RelativeLayout>
