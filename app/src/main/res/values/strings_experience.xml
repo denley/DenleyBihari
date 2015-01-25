@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="role1">Freelance Android Developer</string>
+    <string name="institution1">Self-Employed</string>
+    <string name="timeline1">2012 – 2014</string>
+
+    <string name="role2">Tutor (Game Theory)</string>
+    <string name="institution2">University of Adelaide</string>
+    <string name="timeline2">2011</string>
+
+    <string name="role3">Ph.D. Candidate (incomplete)</string>
+    <string name="institution3">University of South Australia</string>
+    <string name="timeline3">2010 – 2012</string>
+
+    <string name="role4">Software Engineer</string>
+    <string name="institution4">Defence Science and Technology Organisation</string>
+    <string name="timeline4">3 months leading into Ph.D. candidature.</string>
+
+    <string name="role5">
+        Bachelor of Engineering (Electronics)
+        \nwith Bachelor of Economics
+    </string>
+    <string name="institution5">University of Adelaide</string>
+    <string name="timeline5">2005 – 2009</string>
+
+</resources>

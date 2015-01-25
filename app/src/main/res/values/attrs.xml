@@ -20,4 +20,14 @@
         <attr name="pcv_icon" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="ExperienceCardView">
+        <attr name="ecv_role" format="string"/>
+        <attr name="ecv_institution" format="string"/>
+        <attr name="ecv_timeline" format="string"/>
+        <attr name="ecv_type" format="enum">
+            <enum name="education" value="0" />
+            <enum name="experience" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>

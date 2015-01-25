@@ -20,7 +20,7 @@
     <string name="url3">https://play.google.com/store/apps/details?id=com.ajnaware.sunseeker</string>
 
     <string name="name4">9 Patch Editor</string>
-    <string name="client4"></string>
+    <string name="client4" />
     <string name="year4">Self-Published in 2012</string>
     <string name="url4">https://play.google.com/store/apps/details?id=me.denley.android.ninepatch</string>
 

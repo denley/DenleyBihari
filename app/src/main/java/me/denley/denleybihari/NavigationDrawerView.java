@@ -146,7 +146,7 @@ public class NavigationDrawerView extends LinearLayout {
                     case R.id.action_experience:
                         currentPage = 4;
                         pageLoader.loadPage(
-                                new View(getContext()),
+                                new ExperienceView(getContext()),
                                 R.string.action_experience
                         );
                         break;

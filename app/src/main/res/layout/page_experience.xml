@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    >
+
+    <me.denley.denleybihari.ExperienceCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ecv_role="@string/role1"
+        app:ecv_institution="@string/institution1"
+        app:ecv_timeline="@string/timeline1"
+        app:ecv_type="experience"
+        />
+
+    <me.denley.denleybihari.ExperienceCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ecv_role="@string/role2"
+        app:ecv_institution="@string/institution2"
+        app:ecv_timeline="@string/timeline2"
+        app:ecv_type="experience"
+        />
+
+    <me.denley.denleybihari.ExperienceCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ecv_role="@string/role3"
+        app:ecv_institution="@string/institution3"
+        app:ecv_timeline="@string/timeline3"
+        app:ecv_type="education"
+        />
+
+    <me.denley.denleybihari.ExperienceCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ecv_role="@string/role4"
+        app:ecv_institution="@string/institution4"
+        app:ecv_timeline="@string/timeline4"
+        app:ecv_type="experience"
+        />
+
+    <me.denley.denleybihari.ExperienceCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ecv_role="@string/role5"
+        app:ecv_institution="@string/institution5"
+        app:ecv_timeline="@string/timeline5"
+        app:ecv_type="education"
+        />
+
+</LinearLayout>
