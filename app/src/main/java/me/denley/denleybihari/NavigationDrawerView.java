@@ -24,6 +24,7 @@ import butterknife.OnClick;
  */
 public class NavigationDrawerView extends LinearLayout {
 
+    /** A custom action that deselects every view given */
     private static final ButterKnife.Action<DrawerListItem> ACTION_DESELECT
             = new ButterKnife.Action<DrawerListItem>() {
         @Override public void apply(DrawerListItem view, int index) {
@@ -31,8 +32,18 @@ public class NavigationDrawerView extends LinearLayout {
         }
     };
 
+    /**
+     * An interface to the navigation drawer that allows it to
+     * send callbacks to the containing Activity.
+     */
     public interface PageLoader {
+        /**
+         * Requests that the given view be loaded into the
+         * main content area, with the given title
+         */
         public void loadPage(View page, int title);
+
+        /** Requests that this navigation drawer be closed */
         public void closeDrawer();
     }
 
