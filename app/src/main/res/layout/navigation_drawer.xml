@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrimInsetsFrameLayout"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:background="?android:attr/windowBackground"
     android:elevation="10dp"
     android:fitsSystemWindows="true"
-    app:insetForeground="#4000">
+    app:insetForeground="#4000"
+    style="@style/NavDrawer"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +26,9 @@
             >
 
             <include layout="@layout/navigation_drawer_splash" />
+            <View android:layout_width="match_parent" android:layout_height="8dp" />
             <include layout="@layout/navigation_drawer_list" />
+            <View android:layout_width="match_parent" android:layout_height="8dp" />
 
         </me.denley.denleybihari.NavigationDrawerView>
 

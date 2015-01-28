@@ -12,9 +12,15 @@
         app:pcv_name="@string/name1"
         app:pcv_client="@string/client1"
         app:pcv_url="@string/url1"
-        app:pcv_splash_image="@drawable/splash_fusioncalc"
         app:pcv_icon="@drawable/ic_launcher_fusioncalc"
         app:pcv_year="@string/year1"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
         />
 
     <me.denley.denleybihari.PortfolioCardView
@@ -23,10 +29,17 @@
         app:pcv_name="@string/name2"
         app:pcv_client="@string/client2"
         app:pcv_url="@string/url2"
-        app:pcv_splash_image="@drawable/splash_wifi_manager"
         app:pcv_icon="@drawable/ic_launcher_wifi_manager"
         app:pcv_year="@string/year2"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        />
+
 
     <me.denley.denleybihari.PortfolioCardView
         android:layout_width="match_parent"
@@ -34,10 +47,17 @@
         app:pcv_name="@string/name3"
         app:pcv_client="@string/client3"
         app:pcv_url="@string/url3"
-        app:pcv_splash_image="@drawable/splash_sunseeker"
         app:pcv_icon="@drawable/ic_launcher_ss"
         app:pcv_year="@string/year3"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        />
+
 
     <me.denley.denleybihari.PortfolioCardView
         android:layout_width="match_parent"
@@ -45,9 +65,16 @@
         app:pcv_name="@string/name4"
         app:pcv_client="@string/client4"
         app:pcv_url="@string/url4"
-        app:pcv_splash_image="@drawable/splash_9patch"
         app:pcv_icon="@drawable/ic_launcher_9_patch"
         app:pcv_year="@string/year4"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        />
+
 
 </LinearLayout>

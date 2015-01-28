@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Nav Drawer style. This is used to properly set the width on all devices -->
+    <style name="NavDrawer">
+        <item name="android:layout_width">320dp</item>
+    </style>
+
+</resources>

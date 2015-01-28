@@ -35,4 +35,9 @@
         <item name="android:layout_marginRight">16dp</item>
     </style>
 
+    <!-- Nav Drawer style. This is used to properly set the width on all devices -->
+    <style name="NavDrawer">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
 </resources>

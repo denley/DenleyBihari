@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="name1">FusionCalc</string>
     <string name="client1">iOS Adaptation</string>
     <string name="year1">Commissioned in 2014</string>
-    <string name="url1">https://play.google.com/store/apps/details?id=com.fusioncalc</string>
+    <string name="url1" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=com.fusioncalc
+    </string>
 
-    <string name="name2">Wi-Fi Manager\nfor Android Wear</string>
-    <string name="client2">Android Wear App</string>
+    <string name="name2">Wi-Fi Manager</string>
+    <string name="client2">Android Wear (Smartwatch) App</string>
     <string name="year2">Self-Published in 2014</string>
-    <string name="url2">https://play.google.com/store/apps/details?id=me.denley.wearwifimanager</string>
+    <string name="url2" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=me.denley.wearwifimanager
+    </string>
 
     <string name="name3">Sun Seeker</string>
-    <string name="client3">
-        Updates to
-        \nExisting App
-    </string>
+    <string name="client3">Updates to Existing App</string>
     <string name="year3">Commissioned in 2014</string>
-    <string name="url3">https://play.google.com/store/apps/details?id=com.ajnaware.sunseeker</string>
+    <string name="url3" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=com.ajnaware.sunseeker
+    </string>
 
     <string name="name4">9 Patch Editor</string>
     <string name="client4" />
     <string name="year4">Self-Published in 2012</string>
-    <string name="url4">https://play.google.com/store/apps/details?id=me.denley.android.ninepatch</string>
+    <string name="url4" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=me.denley.android.ninepatch
+    </string>
 
 </resources>

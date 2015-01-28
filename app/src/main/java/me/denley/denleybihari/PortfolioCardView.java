@@ -7,12 +7,11 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -25,7 +24,6 @@ import butterknife.OnClick;
  */
 public class PortfolioCardView extends FrameLayout {
 
-    @InjectView(R.id.splash) ImageView splashImageView;
     @InjectView(R.id.name) TextView nameTextView;
     @InjectView(R.id.client) TextView clientTextView;
     @InjectView(R.id.icon) ImageView iconImageView;
@@ -48,24 +46,18 @@ public class PortfolioCardView extends FrameLayout {
             String name = a.getString(R.styleable.PortfolioCardView_pcv_name);
             String client = a.getString(R.styleable.PortfolioCardView_pcv_client);
             String year = a.getString(R.styleable.PortfolioCardView_pcv_year);
-            int splashImage = a.getResourceId(R.styleable.PortfolioCardView_pcv_splash_image, 0);
             int icon = a.getResourceId(R.styleable.PortfolioCardView_pcv_icon, 0);
 
             if(name!=null) {
                 nameTextView.setText(name);
             }
-            if(client!=null) {
+            if(client!=null && !client.isEmpty()) {
                 clientTextView.setText(client);
-            }
-            if(splashImage!=0){
-                Picasso.with(context)
-                        .load(splashImage)
-                        .into(splashImageView);
+            }else{
+                clientTextView.setVisibility(View.GONE);
             }
             if(icon!=0){
-                Picasso.with(context)
-                        .load(icon)
-                        .into(iconImageView);
+                iconImageView.setImageResource(icon);
             }
             if(year!=null){
                 yearTextView.setText(year);

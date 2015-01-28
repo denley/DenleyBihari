@@ -16,7 +16,6 @@
         <attr name="pcv_client" format="string"/>
         <attr name="pcv_year" format="string"/>
         <attr name="pcv_url" format="string"/>
-        <attr name="pcv_splash_image" format="reference"/>
         <attr name="pcv_icon" format="reference"/>
     </declare-styleable>
 
