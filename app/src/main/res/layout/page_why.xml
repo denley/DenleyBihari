@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:text="@string/title_you"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ContentTitle"
+        />
+    <TextView
+        android:id="@+id/content_you"
+        android:text="@string/content_you"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        />
+
+    <TextView
+        android:text="@string/title_this_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ContentTitle"
+        />
+    <TextView
+        android:text="@string/content_this_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        />
+
+    <TextView
+        android:text="@string/title_a_perfect_fit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ContentTitle"
+        />
+    <TextView
+        android:text="@string/content_a_perfect_fit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Content"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        />
+
+</LinearLayout>

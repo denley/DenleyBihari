@@ -125,7 +125,7 @@ public class NavigationDrawerView extends LinearLayout {
                     case R.id.action_why:
                         currentPage = 1;
                         pageLoader.loadPage(
-                                new View(getContext()),
+                                new WhyView(getContext()),
                                 R.string.action_why
                         );
                         break;

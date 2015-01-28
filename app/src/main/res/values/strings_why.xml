@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_you">You</string>
+    <string name="content_you">
+
+    </string>
+
+    <string name="title_this_job">Your New Android Lead</string>
+    <string name="content_this_job">
+
+    </string>
+
+    <string name="title_a_perfect_fit">A Perfect Fit</string>
+    <string name="content_a_perfect_fit">
+
+    </string>
+
+</resources>
