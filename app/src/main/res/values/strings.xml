@@ -15,9 +15,20 @@
     <string name="action_experience">Experience &amp; Education</string>
 
     <string name="action_more">More…</string>
-
     <string name="action_download">Download</string>
-    <string name="error_cant_open">Unable to open link. Please install a web browser.</string>
 
+    <string name="error_cant_open">
+        Unable to open link. Please install and set up a web browser.
+    </string>
+    <string name="error_cant_open_location">
+        Unable to show location.
+        Please check that Google Maps is installed and set up properly.
+    </string>
+    <string name="error_cant_dial">
+        Unable to dial phone number. Please check your cellular connection.
+    </string>
+    <string name="error_cant_email">
+        Unable to start email client. Please set up your email account.
+    </string>
 
 </resources>

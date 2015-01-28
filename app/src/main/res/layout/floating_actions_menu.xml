@@ -6,11 +6,13 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
     android:layout_alignParentRight="true"
-    app:fab_addButtonIconRes="@drawable/ic_person_white_24dp"
+    app:fab_addButtonIconRes="@drawable/ic_contacts_white_24dp"
     app:fab_addButtonPlusIconColor="@android:color/white"
     app:fab_addButtonColorNormal="?attr/colorAccent"
-    app:fab_addButtonColorPressed="@color/colorAccentSecondary">
+    app:fab_addButtonColorPressed="@color/colorAccentSecondary"
+    >
 
     <me.denley.fab.FloatingActionButton
         android:id="@+id/action_contact_phone"
@@ -31,10 +33,10 @@
         />
 
     <me.denley.fab.FloatingActionButton
-        android:id="@+id/action_contact_chat"
+        android:id="@+id/action_contact_twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:fab_icon="@drawable/ic_chat_white_24dp"
+        app:fab_icon="@drawable/ic_twitter_white"
         app:fab_colorNormal="?attr/colorAccent"
         app:fab_colorPressed="@color/colorAccentSecondary"
         />

@@ -1,5 +1,8 @@
 package me.denley.denleybihari;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -9,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,6 +27,14 @@ import me.denley.fab.FloatingActionsMenu;
  * @author Denley Bihari
  */
 public class MainActivity extends ActionBarActivity implements NavigationDrawerView.PageLoader{
+
+    // Contact URLs for contact buttons
+    private static final String URL_PHONE = "tel:+61431940243";
+    private static final String URL_EMAIL = "mailto:denleybihari@gmail.com";
+    private static final String URL_TWITTER = "https://twitter.com/denleybihari";
+    private static final String URL_LOCATION
+            = "geo:0,0?q=4/8+Eurilpa+Avenue,+Everard+Park,+South+Australia)";
+
 
     @InjectView(R.id.systemBarBackground) View systemBarBackground;
     @InjectView(R.id.toolbar) Toolbar toolbar;
@@ -68,28 +80,52 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         drawerLayout.closeDrawer(Gravity.START);
     }
 
+    @Override public void closeDrawer(){
+        drawerLayout.closeDrawer(Gravity.START);
+    }
+
     @OnClick(R.id.action_contact_phone)
     void contactPhone(){
         contactButton.collapse();
 
+        try {
+            startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(URL_PHONE)));
+        }catch(ActivityNotFoundException e){
+            Toast.makeText(this, R.string.error_cant_dial, Toast.LENGTH_LONG).show();
+        }
     }
 
     @OnClick(R.id.action_contact_email)
     void contactEmail(){
         contactButton.collapse();
 
+        try{
+            startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse(URL_EMAIL)));
+        }catch(ActivityNotFoundException e){
+            Toast.makeText(this, R.string.error_cant_email, Toast.LENGTH_LONG).show();
+        }
     }
 
-    @OnClick(R.id.action_contact_chat)
-    void contactChat(){
+    @OnClick(R.id.action_contact_twitter)
+    void contactTwitter(){
         contactButton.collapse();
 
+        try{
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(URL_TWITTER)));
+        }catch(ActivityNotFoundException e){
+            Toast.makeText(this, R.string.error_cant_open, Toast.LENGTH_LONG).show();
+        }
     }
 
     @OnClick(R.id.action_contact_location)
     void contactLocation(){
         contactButton.collapse();
 
+        try {
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(URL_LOCATION)));
+        }catch(ActivityNotFoundException e){
+            Toast.makeText(this, R.string.error_cant_open_location, Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override public void onBackPressed() {

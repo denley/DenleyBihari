@@ -33,6 +33,7 @@ public class NavigationDrawerView extends LinearLayout {
 
     public interface PageLoader {
         public void loadPage(View page, int title);
+        public void closeDrawer();
     }
 
 
@@ -107,7 +108,10 @@ public class NavigationDrawerView extends LinearLayout {
             R.id.action_experience
     })
     void onNavItemClick(DrawerListItem view){
-        if(!view.isSelected()) {
+        if(view.isSelected()) {
+            // Selected page is already loaded, just close the nav drawer
+            pageLoader.closeDrawer();
+        }else{
             // Apply selected state to view
             ButterKnife.apply(navigationButtons, ACTION_DESELECT);
             view.setSelected(true);
