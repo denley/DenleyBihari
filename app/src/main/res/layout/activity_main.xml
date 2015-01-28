@@ -38,6 +38,8 @@
                 android:background="?attr/colorPrimary"
                 app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 app:title="@string/app_name"
+                app:contentInsetLeft="72dp"
+                app:contentInsetStart="72dp"
                 />
 
 
