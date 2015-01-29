@@ -116,41 +116,57 @@ public class NavigationDrawerView extends LinearLayout {
             // Load page
             if (pageLoader != null) {
                 switch (view.getId()) {
-                    case R.id.action_about:
-                        pageLoader.loadPage(
-                                new AboutView(getContext()),
-                                R.string.app_name
-                        );
+                    case R.id.action_about: {
+                        final ContentPageView newPage = new AboutView(getContext());
+                        pageLoader.loadPage(newPage, R.string.app_name);
                         currentPage = 0;
+                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                            @Override public void onNextClick() {
+                                onNavItemClick(navigationButtons.get(currentPage + 1));
+                            }
+                        });
                         break;
-                    case R.id.action_why:
-                        pageLoader.loadPage(
-                                new WhyView(getContext()),
-                                R.string.title_why
-                        );
+                    }case R.id.action_why: {
+                        final ContentPageView newPage = new WhyView(getContext());
+                        pageLoader.loadPage(newPage, R.string.title_why);
                         currentPage = 1;
+                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                            @Override public void onNextClick() {
+                                onNavItemClick(navigationButtons.get(currentPage + 1));
+                            }
+                        });
                         break;
-                    case R.id.action_portfolio:
-                        pageLoader.loadPage(
-                                new PortfolioView(getContext()),
-                                R.string.title_portfolio
-                        );
+                    }case R.id.action_portfolio: {
+                        final ContentPageView newPage = new ContentPageView(
+                                getContext(),
+                                R.layout.page_portfolio);
+
+                        pageLoader.loadPage(newPage, R.string.title_portfolio);
                         currentPage = 2;
+                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                            @Override public void onNextClick() {
+                                onNavItemClick(navigationButtons.get(currentPage + 1));
+                            }
+                        });
                         break;
-                    case R.id.action_testimonials:
-                        pageLoader.loadPage(
-                                new TestimonialsView(getContext()),
-                                R.string.title_testimonials
-                        );
+                    }case R.id.action_testimonials: {
+                        final ContentPageView newPage = new TestimonialsView(getContext());
+                        pageLoader.loadPage(newPage, R.string.title_testimonials);
                         currentPage = 3;
+                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                            @Override public void onNextClick() {
+                                onNavItemClick(navigationButtons.get(currentPage + 1));
+                            }
+                        });
                         break;
-                    case R.id.action_experience:
+                    }case R.id.action_experience: {
                         pageLoader.loadPage(
                                 new ExperienceView(getContext()),
                                 R.string.title_experience
                         );
                         currentPage = 4;
                         break;
+                    }
                 }
             }
         }

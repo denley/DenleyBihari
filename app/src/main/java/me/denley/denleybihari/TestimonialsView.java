@@ -4,8 +4,6 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.view.LayoutInflater;
-import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import butterknife.ButterKnife;
@@ -16,14 +14,13 @@ import butterknife.OnClick;
  *
  * @author Denley Bihari
  */
-public class TestimonialsView extends FrameLayout {
+public class TestimonialsView extends ContentPageView {
 
     private static final String URL_MORE = "https://www.elance.com/s/denleybihari/job-history";
 
 
     public TestimonialsView(Context context) {
-        super(context);
-        LayoutInflater.from(context).inflate(R.layout.page_testimonials, this);
+        super(context, R.layout.page_testimonials);
         ButterKnife.inject(this);
     }
 

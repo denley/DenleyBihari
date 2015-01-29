@@ -3,12 +3,7 @@ package me.denley.denleybihari;
 import android.content.Context;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.view.LayoutInflater;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -18,15 +13,14 @@ import butterknife.InjectView;
  *
  * @author Denley Bihari
  */
-public class AboutView extends FrameLayout {
+public class AboutView extends ContentPageView {
 
     @InjectView(R.id.content_heart) TextView heartContent;
     @InjectView(R.id.content_trade) TextView tradeContent;
 
 
     public AboutView(Context context) {
-        super(context);
-        LayoutInflater.from(context).inflate(R.layout.page_about, this);
+        super(context, R.layout.page_about);
         ButterKnife.inject(this);
 
         // Setup TextViews with clickable links

@@ -15,7 +15,7 @@
     <string name="action_experience">The Boring Stuff</string>
 
     <string name="action_more">More…</string>
-    <string name="action_download">Download</string>
+    <string name="action_next">Next -></string>
 
     <string name="error_cant_open">
         Unable to open link. Please install and set up a web browser.
