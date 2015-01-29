@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
+
+import java.io.Serializable;
+import java.util.LinkedList;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -34,6 +38,30 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
     private static final String URL_TWITTER = "https://twitter.com/denleybihari";
     private static final String URL_LOCATION
             = "geo:0,0?q=4/8+Eurilpa+Avenue,+Everard+Park,+South+Australia)";
+
+
+    /** A class representing one entry in the page history stack */
+    private class BackStackEntry implements Serializable {
+
+        CharSequence title;
+        View page;
+        int pageIndex;
+        int scrollPosition;
+
+        public BackStackEntry(@NonNull View page, @NonNull CharSequence title,
+                              int pageIndex, int scrollPosition){
+            this.page = page;
+            this.title = title;
+            this.pageIndex = pageIndex;
+            this.scrollPosition = scrollPosition;
+        }
+
+    };
+
+
+
+    // The page history
+    private LinkedList<BackStackEntry> backStack = new LinkedList<BackStackEntry>();
 
 
     @InjectView(R.id.systemBarBackground) View systemBarBackground;
@@ -74,6 +102,21 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
     }
 
     @Override public void loadPage(View page, int title) {
+        if(mainContentView.getChildCount()>0){
+            // Add the existing page to the backstack
+
+            final View oldPage = mainContentView.getChildAt(0);
+            final CharSequence oldTitle = toolbar.getTitle();
+            final int pageIndex = navigationDrawer.getCurrentPageIndex();
+            final int oldScrollPos = mainContentView.getScrollY();
+
+            backStack.push(new BackStackEntry(oldPage, oldTitle, pageIndex, oldScrollPos));
+        }
+
+        loadPageIgnoreBackStack(page, getString(title));
+    }
+
+    private void loadPageIgnoreBackStack(View page, CharSequence title){
         mainContentView.scrollTo(0, 0);
         mainContentView.removeAllViews();
         mainContentView.addView(page);
@@ -130,8 +173,36 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
     }
 
     @Override public void onBackPressed() {
-        if(!navigationDrawer.navigateBack()){
+        if(backStack.isEmpty()){
             super.onBackPressed();
+        }else {
+            // Load the previous page
+            final BackStackEntry lastPage = backStack.pop();
+            loadPageIgnoreBackStack(lastPage.page, lastPage.title);
+            navigationDrawer.setCurrentPageIndex(lastPage.pageIndex);
+            mainContentView.post(new Runnable() {
+                public void run() {
+                    mainContentView.scrollTo(0, lastPage.scrollPosition);
+                }
+            });
+        }
+    }
+
+    @Override protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Save the history stack
+        outState.putSerializable("history_stack", backStack);
+    }
+
+    @Override protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        final LinkedList<BackStackEntry> stack =
+                (LinkedList<BackStackEntry>) savedInstanceState.getSerializable("history_stack");
+
+        // Restore the history stack, if it exists
+        if(stack!=null && !stack.isEmpty()) {
+            backStack = stack;
         }
     }
 

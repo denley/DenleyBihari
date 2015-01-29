@@ -5,15 +5,11 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 import butterknife.InjectViews;
 import butterknife.OnClick;
 
@@ -121,59 +117,56 @@ public class NavigationDrawerView extends LinearLayout {
             if (pageLoader != null) {
                 switch (view.getId()) {
                     case R.id.action_about:
-                        currentPage = 0;
                         pageLoader.loadPage(
                                 new AboutView(getContext()),
                                 R.string.app_name
                         );
+                        currentPage = 0;
                         break;
                     case R.id.action_why:
-                        currentPage = 1;
                         pageLoader.loadPage(
                                 new WhyView(getContext()),
                                 R.string.title_why
                         );
+                        currentPage = 1;
                         break;
                     case R.id.action_portfolio:
-                        currentPage = 2;
                         pageLoader.loadPage(
                                 new PortfolioView(getContext()),
                                 R.string.title_portfolio
                         );
+                        currentPage = 2;
                         break;
                     case R.id.action_testimonials:
-                        currentPage = 3;
                         pageLoader.loadPage(
                                 new TestimonialsView(getContext()),
                                 R.string.title_testimonials
                         );
+                        currentPage = 3;
                         break;
                     case R.id.action_experience:
-                        currentPage = 4;
                         pageLoader.loadPage(
                                 new ExperienceView(getContext()),
                                 R.string.title_experience
                         );
+                        currentPage = 4;
                         break;
                 }
             }
         }
     }
 
-    /**
-     * Attempts to navigate backwards through the page history.
-     *
-     * @return  true, if the navigation was successful.
-     *          false, if the root element is already showing.
-     */
-    public boolean navigateBack(){
-        final DrawerListItem rootItem = navigationButtons.get(0);
-        if(rootItem.isSelected()){
-            return false;
-        }else{
-            onNavItemClick(rootItem);
-            return true;
-        }
+    /** Returns the currently selected page index */
+    public int getCurrentPageIndex(){
+        return currentPage;
+    }
+
+    /** Navigates to the given page index, calling the PageLoader's callback. */
+    public void setCurrentPageIndex(final int index){
+        currentPage = index;
+
+        ButterKnife.apply(navigationButtons, ACTION_DESELECT);
+        navigationButtons.get(currentPage).setSelected(true);
     }
 
 }
