@@ -74,6 +74,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
     }
 
     @Override public void loadPage(View page, int title) {
+        mainContentView.scrollTo(0, 0);
         mainContentView.removeAllViews();
         mainContentView.addView(page);
         toolbar.setTitle(title);
