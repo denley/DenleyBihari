@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="title_experience">Experience &amp; Education</string>
+
     <string name="role1">Android Developer</string>
     <string name="institution1">Self-Employed (Freelance)</string>
     <string name="timeline1">2012 – 2014</string>

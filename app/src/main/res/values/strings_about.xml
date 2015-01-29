@@ -3,31 +3,39 @@
 
     <string name="title_me">Me</string>
     <string name="content_me">
-        I\'m Denley (a guy with a weird name). Born and raised in Adelaide, Australia.
-        I\'d like to talk about our future.
+        I\'m Denley (That\'s me to the right).
+        I was born, raised, and educated in Adelaide, Australia.
+        I want to lead the Android charge at Basecamp.
     </string>
 
     <string name="title_heart">At Heart</string>
     <string name="content_heart">
-        I\'m into gadgets (I\'m <![CDATA[<b><i>really</i></b>]]> into gadgets).
+        I\'m into technology and gadgets (I\'m <![CDATA[<b><i>really</i></b>]]> into gadgets).
         I enjoy looking at
         <![CDATA[<a href="https://www.kickstarter.com/discover/advanced?category_id=16&sort=newest">
         new technology projects</a>]]>
         on Kickstarter™, and reading about the
         <![CDATA[<a href="http://en.wikipedia.org/wiki/Consumer_Electronics_Show">CES</a>]]>
-        every year.
-        I like reading anything scientific or technical.
-        In my spare time I like watching sci-fi, and working on my own Android™ app ideas.
+        every year. I also like reading anything scientific or technical.
+        <![CDATA[<br/><br/>]]>
+        In my spare time I like watching sci-fi, and working on my own Android™ app ideas
+        (including apps for my Android Wear smartwatch).
         I play pool (billiards) in a team with friends.
     </string>
 
     <string name="title_trade">By Trade</string>
     <string name="content_trade">
         I\'m a professional Android guru (freelance Android developer).
-        I work with a range of clients to build their app ideas from scratch,
-        to update existing apps (fixing bugs and updating designs), and to port existing
-        iOS apps to Android (and trying hard to convince them to adapt their design).
-        \n\nI really enjoy what I do.
+        I work with clients all over the world to:
+        <![CDATA[<br/>]]>
+        1) Build app ideas from scratch
+        <![CDATA[<br/>]]>
+        2) Update existing apps (fixing bugs and updating designs)
+        <![CDATA[<br/>]]>
+        3) Port existing iOS apps over to Android
+        (while trying hard to convince them to adapt their design)
+        <![CDATA[<br/><br/>]]>
+        I really enjoy what I do.
         I like the cutting-edge and open nature of the Android community.
         I like the variety of projects that keep me challenged and engaged.
         I like the freedom to work remotely and manage my own time.
@@ -37,7 +45,16 @@
 
     <string name="title_aspiration">To The Future</string>
     <string name="content_aspiration">
+        First and foremost, I want to continue to work with the Android platform, whether
+        continuing as a freelancer, or as an employee working on Android projects.
 
+        \n\nI would like to work on products that I would find useful myself,
+        and to work thoroughly rather than quickly,
+        so that I can be proud of my results.
+
+        \n\nI want to surround myself with talented people whom I can respect and commend,
+        who will push me to be my best and refine my skills,
+        and who aren\'t too polite to let me know how I can improve.
     </string>
 
 </resources>

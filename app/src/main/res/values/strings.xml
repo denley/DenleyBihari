@@ -10,9 +10,9 @@
 
     <string name="action_about">About Me</string>
     <string name="action_why">Why Basecamp?</string>
-    <string name="action_portfolio">Portfolio</string>
-    <string name="action_testimonials">Testimonials</string>
-    <string name="action_experience">Experience &amp; Education</string>
+    <string name="action_portfolio">My Portfolio</string>
+    <string name="action_testimonials">What Others Say</string>
+    <string name="action_experience">The Boring Stuff</string>
 
     <string name="action_more">More…</string>
     <string name="action_download">Download</string>

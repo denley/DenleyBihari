@@ -29,7 +29,8 @@ public class PortfolioCardView extends FrameLayout {
     @InjectView(R.id.icon) ImageView iconImageView;
     @InjectView(R.id.year) TextView yearTextView;
 
-    String url;
+    /** The url to open when the portfolio item is clicked */
+    String url = null;
 
     public PortfolioCardView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -67,13 +68,15 @@ public class PortfolioCardView extends FrameLayout {
 
     @OnClick(R.id.download)
     void onDownloadClick(){
-        final Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
+        if(url!=null) {
+            final Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
 
-        try {
-            getContext().startActivity(intent);
-        }catch(ActivityNotFoundException e){
-            Toast.makeText(getContext(), R.string.error_cant_open, Toast.LENGTH_LONG).show();
+            try {
+                getContext().startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(getContext(), R.string.error_cant_open, Toast.LENGTH_LONG).show();
+            }
         }
     }
 

@@ -32,6 +32,7 @@
         style="@style/ContentTitle"
         />
     <TextView
+        android:id="@+id/content_this_job"
         android:text="@string/content_this_job"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,6 +51,7 @@
         style="@style/ContentTitle"
         />
     <TextView
+        android:id="@+id/content_a_perfect_fit"
         android:text="@string/content_a_perfect_fit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -141,28 +141,28 @@ public class NavigationDrawerView extends LinearLayout {
                         currentPage = 1;
                         pageLoader.loadPage(
                                 new WhyView(getContext()),
-                                R.string.action_why
+                                R.string.title_why
                         );
                         break;
                     case R.id.action_portfolio:
                         currentPage = 2;
                         pageLoader.loadPage(
                                 new PortfolioView(getContext()),
-                                R.string.action_portfolio
+                                R.string.title_portfolio
                         );
                         break;
                     case R.id.action_testimonials:
                         currentPage = 3;
                         pageLoader.loadPage(
                                 new TestimonialsView(getContext()),
-                                R.string.action_testimonials
+                                R.string.title_testimonials
                         );
                         break;
                     case R.id.action_experience:
                         currentPage = 4;
                         pageLoader.loadPage(
                                 new ExperienceView(getContext()),
-                                R.string.action_experience
+                                R.string.title_experience
                         );
                         break;
                 }

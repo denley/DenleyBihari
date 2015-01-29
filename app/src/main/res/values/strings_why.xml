@@ -1,19 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="title_why">Why Basecamp?</string>
+
     <string name="title_you">You</string>
     <string name="content_you">
+        At Basecamp you aren\'t afraid to break norms. Instead of relying on conventions, you
+        literally <![CDATA[<a href="http://gettingreal.37signals.com/">wrote the book</a>]]>
+        about running a web business.
+        <![CDATA[<br/><br/>]]>
 
+        You\'ve made great products, that have earned you the respect of the web community.
+        You don\'t try to do everything. But what you do, you do well.
     </string>
 
     <string name="title_this_job">Your New Android Lead</string>
     <string name="content_this_job">
+        You\'re looking for somebody who lives and breathes Android, but you\'re also a
+        relatively small team. This means that you\'d rather somebody well-rounded than
+        specialised. So you want a quick learner, who is engaged and flexible when trying
+        new things and wearing many hats.
+        <![CDATA[<br/><br/>]]>
 
+        You want someone that clicks with your team, but also not too shy to break the norm
+        and provide new ways of solving problems. You want someone who sees what they do as
+        a passion, not a chore.
     </string>
 
     <string name="title_a_perfect_fit">A Perfect Fit</string>
     <string name="content_a_perfect_fit">
+        I believe that my experience and aspirations are a great fit for your company,
+        and your new position of lead Android developer.
+        <![CDATA[<br/><br/>]]>
 
+        I am enthusiastic and capable to take on the variety of tasks that this role
+        will require. Unlike
+        <![CDATA[<a href="http://www.reddit.com/r/androiddev/comments/2t7rba/job_lead_android_at_basecamp_work_anywhere/cnwyr7x">other developers</a>]]>
+        who
+        <![CDATA[<a href="http://www.reddit.com/r/androiddev/comments/2t7rba/job_lead_android_at_basecamp_work_anywhere/cnxupxw">respond</a>]]>
+        to your job postings, I welcome participation in your
+        <![CDATA[<a href="https://signalvnoise.com/posts/3676-everyone-on-support">
+        Everyone on Support</a>]]> programme.
+        As a full-time freelancer, I spend a lot of time working directly with customers in order
+        to understand their requirements and resolve their issues. I appreciate and enjoy the
+        perspective that this provides. Eliciting and understanding use-cases directly from
+        customers is the only way to effectively develop and refine design and implementation
+        criteria.
+        <![CDATA[<br/><br/>]]>
+
+        I am ready to take the new challenges that this role will provide. Basecamp\'s Android
+        app has been downloaded by hundreds of thousands of users. This means that the role requires
+        great attention to detail, and a strength to absorb the scrutiny that the work will
+        inevitably attract. It will be tough, but it will be worth it. It will help me push my
+        skills to the next level.
     </string>
 
 </resources>

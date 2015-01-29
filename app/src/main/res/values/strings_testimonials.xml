@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="title_testimonials">Testimonials</string>
+
     <string name="author1">Graham Dawson</string>
     <string name="quote1">
         Denley is what I would call a Ninja developer.

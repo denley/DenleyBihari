@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <string name="title_portfolio">Portfolio</string>
+
     <string name="name1">FusionCalc</string>
     <string name="client1">iOS Adaptation</string>
     <string name="year1">Commissioned in 2014</string>

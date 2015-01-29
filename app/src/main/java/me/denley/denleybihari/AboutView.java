@@ -21,7 +21,9 @@ import butterknife.InjectView;
 public class AboutView extends FrameLayout {
 
     @InjectView(R.id.content_heart) TextView heartContent;
+    @InjectView(R.id.content_trade) TextView tradeContent;
     @InjectView(R.id.profile_image) ImageView profileImage;
+
 
     public AboutView(Context context) {
         super(context);
@@ -31,6 +33,8 @@ public class AboutView extends FrameLayout {
         // Setup TextViews with clickable links
         heartContent.setText(Html.fromHtml(context.getString(R.string.content_heart)));
         heartContent.setMovementMethod(LinkMovementMethod.getInstance());
+        tradeContent.setText(Html.fromHtml(context.getString(R.string.content_trade)));
+        tradeContent.setMovementMethod(LinkMovementMethod.getInstance());
 
         // Load circular version of the profile image
         if(!isInEditMode()) {

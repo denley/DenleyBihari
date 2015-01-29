@@ -53,15 +53,24 @@ public class DrawerListItem extends LinearLayout {
 
     }
 
+    /**
+     * Sets up the background drawable for this list item.
+     *
+     * This must be done programatically, to use the theme-dependent background attribute
+     * as a fallback for the "pressed" and "normal" states.
+     */
     private void setupBackground(final Context context){
+        // Load the "normal" state, a theme attribute
         final TypedArray backgroundArray = context.obtainStyledAttributes(
                 new int[]{R.attr.selectableItemBackground});
         final Drawable normalPressedBackground = backgroundArray.getDrawable(0);
         backgroundArray.recycle();
 
+        // Load the "selected" state
         final Drawable selectedBackground = new ColorDrawable(
                 context.getResources().getColor(R.color.selected_item_background));
 
+        // Set up the state-list drawable
         final StateListDrawable background = new StateListDrawable();
         background.addState(new int[]{android.R.attr.state_selected}, selectedBackground);
         background.addState(StateSet.WILD_CARD, normalPressedBackground);
