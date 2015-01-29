@@ -1,2 +1,2 @@
-# Denley Bihari's Résumé
-An Android appn designed to promote the work of Denley Bihari for job applications.
+# Denley Bihari's Resumé
+An Android app designed to promote the work of Denley Bihari a job application with Basecamp.
