@@ -52,8 +52,6 @@ public class NavigationDrawerView extends LinearLayout {
     /** The loader to handle navigation page loading */
     PageLoader pageLoader = null;
 
-    @InjectView(R.id.profile_image) ImageView profileImage;
-
     @InjectViews({
             R.id.action_about,
             R.id.action_why,
@@ -73,14 +71,6 @@ public class NavigationDrawerView extends LinearLayout {
     @Override protected void onFinishInflate() {
         super.onFinishInflate();
         ButterKnife.inject(this);
-
-        // Load circular version of the profile image
-        if(!isInEditMode()) {
-            Picasso.with(getContext())
-                    .load(R.drawable.profile_image)
-                    .transform(new CircleTransformation())
-                    .into(profileImage);
-        }
     }
 
     @Override public Parcelable onSaveInstanceState() {

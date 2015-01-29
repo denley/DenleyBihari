@@ -22,7 +22,6 @@ public class AboutView extends FrameLayout {
 
     @InjectView(R.id.content_heart) TextView heartContent;
     @InjectView(R.id.content_trade) TextView tradeContent;
-    @InjectView(R.id.profile_image) ImageView profileImage;
 
 
     public AboutView(Context context) {
@@ -35,14 +34,6 @@ public class AboutView extends FrameLayout {
         heartContent.setMovementMethod(LinkMovementMethod.getInstance());
         tradeContent.setText(Html.fromHtml(context.getString(R.string.content_trade)));
         tradeContent.setMovementMethod(LinkMovementMethod.getInstance());
-
-        // Load circular version of the profile image
-        if(!isInEditMode()) {
-            Picasso.with(getContext())
-                    .load(R.drawable.profile_image)
-                    .transform(new CircleTransformation())
-                    .into(profileImage);
-        }
     }
 
 }
