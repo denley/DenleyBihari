@@ -11,7 +11,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
@@ -64,7 +63,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
     private LinkedList<BackStackEntry> backStack = new LinkedList<BackStackEntry>();
 
 
-    @InjectView(R.id.systemBarBackground) View systemBarBackground;
     @InjectView(R.id.toolbar) Toolbar toolbar;
     @InjectView(R.id.main_content) ScrollView mainContentView;
     @InjectView(R.id.drawer_layout) DrawerLayout drawerLayout;
@@ -76,7 +74,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
-        setSystemBarHeight();
+
+        // Set the status bar colour
+        drawerLayout.setStatusBarBackground(R.color.colorPrimaryDark);
 
         // Set up navigation drawer
         final ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(
@@ -96,7 +96,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         drawerLayout.setDrawerListener(drawerToggle);
         navigationDrawer.setPageLoader(this);
         drawerToggle.syncState();
-
 
         contactButton.attachToScrollView(mainContentView);
     }
@@ -204,19 +203,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         if(stack!=null && !stack.isEmpty()) {
             backStack = stack;
         }
-    }
-
-    /** Measures the status bar height, and sets the height of the overlay view accordingly */
-    private void setSystemBarHeight() {
-        int height = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            height = getResources().getDimensionPixelSize(resourceId);
-        }
-
-        final ViewGroup.LayoutParams params = systemBarBackground.getLayoutParams();
-        params.height = height;
-        systemBarBackground.setLayoutParams(params);
     }
 
 }

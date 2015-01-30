@@ -9,60 +9,43 @@
     android:fitsSystemWindows="true"
     >
 
-    <me.denley.denleybihari.ScrimInsetsFrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        app:insetForeground="#0000"
         >
-        <LinearLayout
-            android:orientation="vertical"
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_height="?attr/actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:title="@string/app_name"
+            app:contentInsetLeft="72dp"
+            app:contentInsetStart="72dp"
+            android:elevation="8dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             >
 
-            <View
-                android:id="@+id/systemBarBackground"
-                android:background="?attr/colorPrimaryDark"
+            <!-- Main content container -->
+            <ScrollView
+                android:id="@+id/main_content"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="match_parent"
                 />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_height="?attr/actionBarSize"
-                android:layout_width="match_parent"
-                android:background="?attr/colorPrimary"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:title="@string/app_name"
-                app:contentInsetLeft="72dp"
-                app:contentInsetStart="72dp"
-                />
+            <!-- Floating actions menu -->
+            <include layout="@layout/floating_actions_menu" />
 
+        </RelativeLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                >
-
-                <!-- Main content container -->
-                <ScrollView
-                    android:id="@+id/main_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
-
-                <!-- Floating actions menu -->
-                <include layout="@layout/floating_actions_menu" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-    </me.denley.denleybihari.ScrimInsetsFrameLayout>
+    </LinearLayout>
 
     <!-- Navigation drawer -->
     <include layout="@layout/navigation_drawer" />
