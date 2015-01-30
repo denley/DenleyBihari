@@ -40,14 +40,13 @@
         android:layout_marginLeft="72dp"
         />
 
-
     <me.denley.denleybihari.PortfolioCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:pcv_name="@string/name3"
         app:pcv_client="@string/client3"
         app:pcv_url="@string/url3"
-        app:pcv_icon="@drawable/ic_launcher_ss"
+        app:pcv_icon="@drawable/ic_launcher_trip_tracker"
         app:pcv_year="@string/year3"
         />
     <View
@@ -58,15 +57,48 @@
         android:layout_marginLeft="72dp"
         />
 
-
     <me.denley.denleybihari.PortfolioCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:pcv_name="@string/name4"
         app:pcv_client="@string/client4"
         app:pcv_url="@string/url4"
-        app:pcv_icon="@drawable/ic_launcher_9_patch"
+        app:pcv_icon="@drawable/ic_launcher_ss"
         app:pcv_year="@string/year4"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        />
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name5"
+        app:pcv_client="@string/client5"
+        app:pcv_url="@string/url5"
+        app:pcv_icon="@drawable/ic_launcher_8_ball"
+        app:pcv_year="@string/year5"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        />
+
+    <me.denley.denleybihari.PortfolioCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:pcv_name="@string/name6"
+        app:pcv_client="@string/client6"
+        app:pcv_url="@string/url6"
+        app:pcv_icon="@drawable/ic_launcher_9_patch"
+        app:pcv_year="@string/year6"
         />
     <View
         android:layout_width="match_parent"

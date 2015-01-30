@@ -11,23 +11,37 @@
     </string>
 
     <string name="name2">Wi-Fi Manager</string>
-    <string name="client2">Android Wear (Smartwatch) App</string>
+    <string name="client2">Smartwatch App (Android Wear)</string>
     <string name="year2">Self-Published in 2014</string>
     <string name="url2" tools:translatable="false">
         https://play.google.com/store/apps/details?id=me.denley.wearwifimanager
     </string>
 
-    <string name="name3">Sun Seeker</string>
-    <string name="client3">Updates to Existing App</string>
-    <string name="year3">Commissioned in 2014</string>
+    <string name="name3">Trip Tracker</string>
+    <string name="client3">Smartwatch App (Android Wear)</string>
+    <string name="year3">Self-Published in 2014</string>
     <string name="url3" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=me.denley.weardrivingcompanion
+    </string>
+
+    <string name="name4">Sun Seeker</string>
+    <string name="client4">Updates to Existing App</string>
+    <string name="year4">Commissioned in 2014</string>
+    <string name="url4" tools:translatable="false">
         https://play.google.com/store/apps/details?id=com.ajnaware.sunseeker
     </string>
 
-    <string name="name4">9 Patch Editor</string>
-    <string name="client4" />
-    <string name="year4">Self-Published in 2012</string>
-    <string name="url4" tools:translatable="false">
+    <string name="name5">8 Ball Pool Referee</string>
+    <string name="client5" />
+    <string name="year5">Self-Published in 2013</string>
+    <string name="url5" tools:translatable="false">
+        https://play.google.com/store/apps/details?id=me.denley.android.eightballumpire
+    </string>
+
+    <string name="name6">9 Patch Editor</string>
+    <string name="client6" />
+    <string name="year6">Self-Published in 2012</string>
+    <string name="url6" tools:translatable="false">
         https://play.google.com/store/apps/details?id=me.denley.android.ninepatch
     </string>
 
