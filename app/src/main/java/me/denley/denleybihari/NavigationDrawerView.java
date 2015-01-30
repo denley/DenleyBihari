@@ -20,6 +20,15 @@ import butterknife.OnClick;
  */
 public class NavigationDrawerView extends LinearLayout {
 
+    /** Page titles in order */
+    private static final int[] TITLES = {
+            R.string.title_me,
+            R.string.title_you,
+            R.string.title_portfolio,
+            R.string.title_testimonials,
+            R.string.title_experience
+    };
+
     /** A custom action that deselects every view given */
     private static final ButterKnife.Action<DrawerListItem> ACTION_DESELECT
             = new ButterKnife.Action<DrawerListItem>() {
@@ -115,60 +124,57 @@ public class NavigationDrawerView extends LinearLayout {
 
             // Load page
             if (pageLoader != null) {
-                switch (view.getId()) {
-                    case R.id.action_about: {
-                        final ContentPageView newPage = new AboutView(getContext());
-                        pageLoader.loadPage(newPage, R.string.app_name);
-                        currentPage = 0;
-                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
-                            @Override public void onNextClick() {
-                                onNavItemClick(navigationButtons.get(currentPage + 1));
-                            }
-                        });
-                        break;
-                    }case R.id.action_why: {
-                        final ContentPageView newPage = new WhyView(getContext());
-                        pageLoader.loadPage(newPage, R.string.title_why);
-                        currentPage = 1;
-                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
-                            @Override public void onNextClick() {
-                                onNavItemClick(navigationButtons.get(currentPage + 1));
-                            }
-                        });
-                        break;
-                    }case R.id.action_portfolio: {
-                        final ContentPageView newPage = new ContentPageView(
-                                getContext(),
-                                R.layout.page_portfolio);
-
-                        pageLoader.loadPage(newPage, R.string.title_portfolio);
-                        currentPage = 2;
-                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
-                            @Override public void onNextClick() {
-                                onNavItemClick(navigationButtons.get(currentPage + 1));
-                            }
-                        });
-                        break;
-                    }case R.id.action_testimonials: {
-                        final ContentPageView newPage = new TestimonialsView(getContext());
-                        pageLoader.loadPage(newPage, R.string.title_testimonials);
-                        currentPage = 3;
-                        newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
-                            @Override public void onNextClick() {
-                                onNavItemClick(navigationButtons.get(currentPage + 1));
-                            }
-                        });
-                        break;
-                    }case R.id.action_experience: {
-                        pageLoader.loadPage(
-                                new ExperienceView(getContext()),
-                                R.string.title_experience
-                        );
-                        currentPage = 4;
-                        break;
-                    }
-                }
+                final int pageIndex = navigationButtons.indexOf(view);
+                pageLoader.loadPage(
+                        createPageForIndex(pageIndex),
+                        TITLES[pageIndex]
+                );
+                currentPage = pageIndex;
             }
+        }
+    }
+
+    /** Creates the View object for the page at the given position */
+    public View createPageForIndex(final int pageIndex){
+        switch (pageIndex) {
+            case 0: {
+                final ContentPageView newPage = new AboutView(getContext());
+                newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                    @Override public void onNextClick() {
+                        onNavItemClick(navigationButtons.get(currentPage + 1));
+                    }
+                });
+                return newPage;
+            }case 1: {
+                final ContentPageView newPage = new WhyView(getContext());
+                newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                    @Override public void onNextClick() {
+                        onNavItemClick(navigationButtons.get(currentPage + 1));
+                    }
+                });
+                return newPage;
+            }case 2: {
+                final ContentPageView newPage = new ContentPageView(
+                        getContext(),
+                        R.layout.page_portfolio);
+                newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                    @Override public void onNextClick() {
+                        onNavItemClick(navigationButtons.get(currentPage + 1));
+                    }
+                });
+                return newPage;
+            }case 3: {
+                final ContentPageView newPage = new TestimonialsView(getContext());
+                newPage.setNextPageCallback(new ContentPageView.NextPageCallback() {
+                    @Override public void onNextClick() {
+                        onNavItemClick(navigationButtons.get(currentPage + 1));
+                    }
+                });
+                return newPage;
+            }case 4: {
+                return new ExperienceView(getContext());
+            }default:
+                throw new IndexOutOfBoundsException("Page index out of bounds");
         }
     }
 

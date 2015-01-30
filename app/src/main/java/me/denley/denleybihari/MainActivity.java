@@ -40,16 +40,14 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
 
 
     /** A class representing one entry in the page history stack */
-    private class BackStackEntry implements Serializable {
+    private static class BackStackEntry implements Serializable {
 
         CharSequence title;
-        View page;
         int pageIndex;
         int scrollPosition;
 
-        public BackStackEntry(@NonNull View page, @NonNull CharSequence title,
+        public BackStackEntry(@NonNull CharSequence title,
                               int pageIndex, int scrollPosition){
-            this.page = page;
             this.title = title;
             this.pageIndex = pageIndex;
             this.scrollPosition = scrollPosition;
@@ -104,12 +102,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         if(mainContentView.getChildCount()>0){
             // Add the existing page to the backstack
 
-            final View oldPage = mainContentView.getChildAt(0);
             final CharSequence oldTitle = toolbar.getTitle();
             final int pageIndex = navigationDrawer.getCurrentPageIndex();
             final int oldScrollPos = mainContentView.getScrollY();
 
-            backStack.push(new BackStackEntry(oldPage, oldTitle, pageIndex, oldScrollPos));
+            backStack.push(new BackStackEntry(oldTitle, pageIndex, oldScrollPos));
         }
 
         loadPageIgnoreBackStack(page, getString(title));
@@ -177,7 +174,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerV
         }else {
             // Load the previous page
             final BackStackEntry lastPage = backStack.pop();
-            loadPageIgnoreBackStack(lastPage.page, lastPage.title);
+            final View page = navigationDrawer.createPageForIndex(lastPage.pageIndex);
+            loadPageIgnoreBackStack(page, lastPage.title);
             navigationDrawer.setCurrentPageIndex(lastPage.pageIndex);
             mainContentView.post(new Runnable() {
                 public void run() {
