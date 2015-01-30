@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 
 /**
@@ -33,6 +34,8 @@ public class ContentPageView extends FrameLayout implements View.OnClickListener
 
     private NextPageCallback nextPageCallback = null;
 
+    private Button nextButton;
+
     public ContentPageView(Context context, int layoutResId) {
         super(context);
 
@@ -41,7 +44,8 @@ public class ContentPageView extends FrameLayout implements View.OnClickListener
         inflater.inflate(R.layout.page_container, this);
 
         final ViewGroup pageContainer = (ViewGroup) findViewById(R.id.main_content);
-        findViewById(R.id.action_next).setOnClickListener(this);
+        nextButton = (Button) findViewById(R.id.action_next);
+        nextButton.setOnClickListener(this);
 
         // Inflate the content
         inflater.inflate(layoutResId, pageContainer);
@@ -56,6 +60,12 @@ public class ContentPageView extends FrameLayout implements View.OnClickListener
     /** Sets the callback to be invoked when the 'next' button is clicked */
     public void setNextPageCallback(NextPageCallback callback){
         nextPageCallback = callback;
+    }
+
+    /** Sets the text shown inside the 'next page' button */
+    public void setNextButtonText(int textResId){
+        final String text = getContext().getString(textResId);
+        nextButton.setText(text + " ->");
     }
 
 }
