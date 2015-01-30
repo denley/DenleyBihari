@@ -22,8 +22,8 @@ public class NavigationDrawerView extends LinearLayout {
 
     /** Page titles in order */
     private static final int[] TITLES = {
-            R.string.title_me,
-            R.string.title_you,
+            R.string.app_name,
+            R.string.title_why,
             R.string.title_portfolio,
             R.string.title_testimonials,
             R.string.title_experience
